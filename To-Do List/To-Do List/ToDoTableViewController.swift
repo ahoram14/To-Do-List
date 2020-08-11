@@ -59,7 +59,13 @@ class ToDoTableViewController: UITableViewController {
 
         return cell
     }
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+         // this gives us a single ToDo
+        let eachToDo = listToDo[indexPath.row]
+         performSegue(withIdentifier: "moveToCompletedToDoVC", sender: eachToDo)
+    }
+
    
     // MARK: - Navigation
 
@@ -67,12 +73,11 @@ class ToDoTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
              if let nextAddToDoVC = segue.destination as? AddToDoViewController{
                   nextAddToDoVC.previousToDoTVC = self
              }
             
 
-        }
+        
 }
 }

@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier=" reuseIdentifier" id="6gm-ib-8sx">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="6gm-ib-8sx">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6gm-ib-8sx" id="aLs-Js-b67">
@@ -37,10 +37,57 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="6p0-Ug-csW" kind="show" identifier="moveToCompletedToDoVC" id="N9l-O9-KIT"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XR5-HU-jce" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="89.855072463768124" y="-302.00892857142856"/>
+            <point key="canvasLocation" x="90" y="-302"/>
+        </scene>
+        <!--Completed To Do View Controller-->
+        <scene sceneID="6Kr-SW-Q7b">
+            <objects>
+                <viewController id="6p0-Ug-csW" customClass="CompletedToDoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cgM-PD-OGl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLI-nT-lmx">
+                                <rect key="frame" x="138" y="357" width="123" height="88"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="fFK-EB-hzA"/>
+                                </constraints>
+                                <state key="normal" title="Completed"/>
+                                <connections>
+                                    <action selector="completeTapped:" destination="6p0-Ug-csW" eventType="touchUpInside" id="JBl-Lv-rzW"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ToDo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nt1-gr-JYS">
+                                <rect key="frame" x="171" y="107" width="72" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6n3-Vq-Bk7" firstAttribute="bottom" secondItem="wLI-nT-lmx" secondAttribute="bottom" constant="417" id="57b-gb-x4L"/>
+                            <constraint firstItem="nt1-gr-JYS" firstAttribute="top" secondItem="6n3-Vq-Bk7" secondAttribute="top" constant="19" id="6eX-Oa-f2n"/>
+                            <constraint firstItem="nt1-gr-JYS" firstAttribute="centerX" secondItem="cgM-PD-OGl" secondAttribute="centerX" id="8wx-Hi-etA"/>
+                            <constraint firstItem="wLI-nT-lmx" firstAttribute="leading" secondItem="6n3-Vq-Bk7" secondAttribute="leading" constant="138" id="UdH-MN-2Ud"/>
+                            <constraint firstItem="6n3-Vq-Bk7" firstAttribute="trailing" secondItem="wLI-nT-lmx" secondAttribute="trailing" constant="153" id="V9m-gv-yga"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6n3-Vq-Bk7"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Sqf-Xl-7aC"/>
+                    <connections>
+                        <outlet property="toDoDisplay" destination="nt1-gr-JYS" id="BDn-Ls-2Qb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GTL-2X-bBX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="89.855072463768124" y="451.33928571428567"/>
         </scene>
         <!--Add To Do View Controller-->
         <scene sceneID="Oxl-WI-wLs">
