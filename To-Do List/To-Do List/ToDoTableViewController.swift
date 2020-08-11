@@ -35,15 +35,12 @@ class ToDoTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+    
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
-        return 2
+        
+        return listToDo.count
     }
 
     
@@ -70,7 +67,12 @@ class ToDoTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-    }
-    
+        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+             if let nextAddToDoVC = segue.destination as? AddToDoViewController{
+                  nextAddToDoVC.previousToDoTVC = self
+             }
+            
 
+        }
+}
 }

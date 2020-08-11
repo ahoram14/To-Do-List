@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GEu-0Z-HMF">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -33,7 +33,7 @@
                     <navigationItem key="navigationItem" title="ToDo List" id="fr1-MP-xIa">
                         <barButtonItem key="rightBarButtonItem" title="+" id="nZB-Gq-ctA">
                             <connections>
-                                <segue destination="QgP-Bb-WZb" kind="show" id="0Kt-VV-Egz"/>
+                                <segue destination="QgP-Bb-WZb" kind="show" id="LKa-a9-p0P"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -42,10 +42,10 @@
             </objects>
             <point key="canvasLocation" x="89.855072463768124" y="-302.00892857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Add To Do View Controller-->
         <scene sceneID="Oxl-WI-wLs">
             <objects>
-                <viewController id="QgP-Bb-WZb" sceneMemberID="viewController">
+                <viewController id="QgP-Bb-WZb" customClass="AddToDoViewController" customModule="To_Do_List" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3ft-ak-DyH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,6 +76,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGI-oe-Hpb">
                                 <rect key="frame" x="179" y="484" width="32" height="30"/>
                                 <state key="normal" title="ADD"/>
+                                <connections>
+                                    <action selector="submitButtonTapped:" destination="QgP-Bb-WZb" eventType="touchUpInside" id="PT4-0w-hXA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -98,6 +101,10 @@
                         <viewLayoutGuide key="safeArea" id="8Oo-FW-HXP"/>
                     </view>
                     <navigationItem key="navigationItem" id="F0F-Qc-bjP"/>
+                    <connections>
+                        <outlet property="descriptionInput" destination="J2j-hU-Z5p" id="skc-eu-Bok"/>
+                        <outlet property="switchInput" destination="rV9-Zy-tna" id="CFn-Sk-gtQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eSh-T7-Y6h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
